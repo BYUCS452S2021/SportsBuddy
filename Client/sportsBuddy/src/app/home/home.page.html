@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title color="light">
+      Sports Buddy
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="!loading" size="12" class="bg-image"></div>
+  <div class="ion-text-center profile-div">
+    <img class="profile" src="../../assets/profile.jpg">
+  </div>
+  <div class="ion-text-center">
+    <p class="name">{{user?.firstName}} {{user?.lastName}}</p>
+  </div>
+  <div class="ion-padding">
+    <p>Username: {{user?.userName}}</p>
+    <p>Gender: {{user?.gender}}</p>
+    <p>UserId: {{user?.userId}}</p>
+    <p>User Email: {{user?.userEmail}}</p>
+  </div>
+  <div class="ion-padding">
+    <p class="blue" (click)="logout()">Log Out</p>
+  </div>
+</ion-content>

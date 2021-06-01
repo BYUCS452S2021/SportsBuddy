@@ -1,0 +1,67 @@
+<ion-header class="ion-text-start">
+  <ion-toolbar>
+    <ion-title color="light">Create a New Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <p>Sign up to use SportsBuddy</p>
+            </ion-col>
+            <ion-col size="6">
+                <ion-input [(ngModel)]="firstName" mode="ios" class="ion-padding-start" placeholder="First Name" required></ion-input> 
+            </ion-col>
+            <ion-col size="6">
+                <ion-input [(ngModel)]="lastName" mode="md" class="ion-padding-start" placeholder="Last Name" required></ion-input>   
+            </ion-col>
+            <ion-col size="12">
+                <ion-input [(ngModel)]="email" class="ion-padding-start" placeholder="Email Address" required></ion-input>   
+            </ion-col>
+            <ion-col size="6">
+                <ion-input [(ngModel)]="userName" class="ion-padding-start" placeholder="Username" required></ion-input> 
+            </ion-col>
+            <ion-col size="6">
+                <ion-input type="password" [(ngModel)]="password" class="ion-padding-start" placeholder="Password" required></ion-input>   
+            </ion-col>
+            <ion-col size="12">
+                <ion-radio-group [(ngModel)]="gender" mode="md" value="Female">
+                    <ion-grid>
+                        <ion-row>
+                            <ion-col size="6">
+                                <ion-item class="ion-no-padding">
+                                    <ion-label>Female</ion-label>
+                                    <ion-radio slot="start" value="Female" checked></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col size="6">
+                                <ion-item class="ion-no-padding">
+                                    <ion-label>Male</ion-label>
+                                    <ion-radio slot="start"></ion-radio>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                    
+                    <!-- <ion-radio slot="end" value="Male"></ion-radio> -->
+                </ion-radio-group>
+            </ion-col>
+            <!-- <ion-col size="12">
+                <ion-input [(ngModel)]="userSports" class="ion-padding-start" placeholder="Preferred Sports" required></ion-input>   
+            </ion-col>
+            <ion-col size="12">
+                <ion-input [(ngModel)]="location" class="ion-padding-start" placeholder="Country" required></ion-input>   
+            </ion-col> -->
+            <ion-col class="ion-padding-top" size="12">
+                <ion-button expand="block" (click)="register()">Register</ion-button>
+            </ion-col>
+            <ion-col *ngIf="!allFilled" size="12">
+                <p>Please fill all required fields</p>
+            </ion-col>
+            <ion-col size="12" class="small-text">
+                <p>Already have an account? <span class="blue" (click)="goToLogin()">Log In</span></p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

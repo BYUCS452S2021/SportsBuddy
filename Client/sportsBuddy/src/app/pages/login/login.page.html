@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="light">Login to SportsBuddy</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <p>Login to Your Account</p>
+            </ion-col>
+            <ion-col size="12">
+                <ion-input [(ngModel)]="userName" mode="ios" class="ion-padding-start" placeholder="Username" required></ion-input> 
+            </ion-col>
+            <ion-col size="12">
+                <ion-input type="password" [(ngModel)]="password" mode="md" class="ion-padding-start" placeholder="Password" required></ion-input>   
+            </ion-col>
+            <ion-col class="ion-padding-top" size="12">
+                <ion-button expand="block" (click)="login()">Login</ion-button>
+            </ion-col>
+            <ion-col *ngIf="!allFilled" size="12">
+                <p>Please fill all required fields</p>
+            </ion-col>
+            <ion-col size="12" class="small-text">
+                <p>Don't have account? <span class="blue" (click)="goToSignUp()">Sign Up</span></p>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>
